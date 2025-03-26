@@ -1,32 +1,34 @@
-# MLProject – Machine Learning Algorithm Framework
+# MarketModel – Stock Price Prediction with Machine Learning
 
-**MLProject** is a modular, extensible Python project for implementing and evaluating machine learning algorithms. It provides a clean foundation for working with data preprocessing, model training, evaluation, and integration with CI/CD pipelines.
+**MarketModel** is a simple machine learning project that predicts a stock’s next-day adjusted close price using technical indicators like moving averages, RSI, and volume. Built in Python using scikit-learn, it demonstrates core ML concepts applied to real market data.
 
 ---
 
-## 🚀 Features
+## 📈 Features
 
-- 📊 Core machine learning logic
-- 🧹 Clean, modular structure for future scalability
-- 🔍 Ready for testing and CI integration
-- 📁 Organized for easy packaging and deployment
+- 📥 Fetches historical stock data using Yahoo Finance  
+- ⚙️ Generates technical indicators (MAs, RSI, etc.) for feature engineering  
+- 🧠 Trains a linear regression model to predict the next-day closing price  
+- 📊 Evaluates model performance with R² and Mean Squared Error  
+- 🔮 Outputs a prediction for the next trading day  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python 3.10+
-- NumPy
-- pandas
-- scikit-learn
+- Python 3.10+  
+- yfinance  
+- pandas  
+- scikit-learn  
+
 ---
 
 ## 📦 Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sambriggs262/mlproject.git
-   cd mlproject
+   git clone https://github.com/sambriggs262/MarketModel.git
+   cd MarketModel
    ```
 
 2. (Optional) Create a virtual environment:
@@ -42,41 +44,46 @@
 
 ---
 
+## 🚀 Usage
+
+```bash
+python main.py
+```
+
+Enter any stock ticker symbol (e.g. AAPL, MSFT). The program will:
+- Download historical data from Yahoo Finance (starting in 2022)
+- Engineer features
+- Train a regression model
+- Output:
+  - R² Score
+  - Mean Squared Error
+  - Predicted next-day adjusted close price
+
+---
+
 ## 📁 Project Structure
 
 ```
-mlproject/
-├── main.py              # Entry point for CLI usage
-├── ml_utils.py          # Core ML functions and helpers
-├── requirements.txt     # Project dependencies
-├── .gitignore           # Clean version control
-├── README.md            # You're here
-└── .github/workflows/   # GitHub Actions workflows
+MarketModel/
+├── main.py              # CLI entry point
+├── ml_utils.py          # Helper functions for data prep, modeling, evaluation
+├── requirements.txt     # Dependencies
+├── .gitignore           # Git exclusions
+└── README.md            # You're here
 ```
 
-> Note: Planned refactor will split logic into modules like `data_processing.py`, `model.py`, and `evaluation.py`.
-
 ---
 
-## 🧪 Testing
+## 📌 Notes
 
-Testing is planned using `pytest`. Once tests are added, they will be automatically triggered by the CI pipeline defined in `.github/workflows/`.
-
----
-
-## ✅ To Do
-
-- [ ] Add modular structure (`/mlproject/` directory)
-- [ ] Add docstrings and inline comments
-- [ ] Create unit tests
-- [ ] Set up GitHub Actions for CI
-- [ ] Improve dependency management
+- This model is educational and not intended for financial advice or trading decisions.
+- Accuracy may vary depending on the stock and time frame.
 
 ---
 
 ## 👤 Author
 
-**Sam Briggs**
+**Sam Briggs**  
 [GitHub](https://github.com/sambriggs262) • [LinkedIn](https://linkedin.com/in/sam-briggs-8a825b327)
 
 ---
@@ -84,3 +91,4 @@ Testing is planned using `pytest`. Once tests are added, they will be automatica
 ## 📜 License
 
 This project is open source and available under the MIT License.
+
